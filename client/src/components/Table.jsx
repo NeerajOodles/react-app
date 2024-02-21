@@ -12,8 +12,7 @@ const Table = () => {
 
 
     async function fetchAllData() {
-        const response = await axios.get('http://localhost:3001/')
-        console.log(response.data)
+        const response = await axios.get('https://react-app-0ziy.onrender.com/')
         setData(response.data)
     }
 
@@ -28,11 +27,10 @@ const Table = () => {
         e.preventDefault()
         if(updateData){
             // update
-            console.log('{id: updateData._id, name}', {id: updateData._id, name});
-            await axios.put('http://localhost:3001/api/update', {id: updateData._id, name})
+            await axios.put('https://react-app-0ziy.onrender.com/api/update', {id: updateData._id, name})
         }else{
             // create
-            await axios.post('http://localhost:3001/api/create', {name})
+            await axios.post('https://react-app-0ziy.onrender.com/api/create', {name})
         }
 
         setName('')
